@@ -27,7 +27,7 @@ dataset_2 = pd.DataFrame(data)
 data_button = st.selectbox('Please select one dataset from the following:', ['mpg_dataset', 'dataset_2'])
 
 if data_button == 'mpg_dataset':
-    # Choode the variable for the datasey
+    # Choose the variable from the dataset
     st.title("Select X and Y Variables for the 'mpg' Dataset")
     x_variable = st.selectbox("X Variable", mpg_dataset.columns)
     y_variable = st.selectbox("Y Variable", mpg_dataset.columns)
@@ -50,7 +50,7 @@ elif data_button == 'dataset_2':
     st.pyplot(fig)
 
 # Add a choice for RBF-NN model
-model_choice = st.selectbox('Select a model:', ['Linear Regression', 'RBF-NN'])
+model_choice = st.selectbox('Select a model:', ['Line', 'RBF-NN'])
 
 if model_choice == 'RBF-NN':
     if data_button == 'mpg_dataset':
@@ -77,7 +77,7 @@ if model_choice == 'RBF-NN':
     st.write(f"Mean Absolute Error (MAE): {rbf_mae:.2f}")
     st.write(f"Mean Squared Error (MSE): {rbf_mse:.2f}")
 
-elif model_choice == 'Linear Regression':
+elif model_choice == 'Line':
     if data_button == 'mpg_dataset':
         df = mpg_dataset
     elif data_button == 'dataset_2':
